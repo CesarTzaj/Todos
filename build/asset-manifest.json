@@ -1,13 +1,13 @@
 {
-  "files": {
-    "main.css": "/CesarTzaj/todos/static/css/main.8d8ba537.css",
-    "main.js": "/CesarTzaj/todos/static/js/main.8c05fd18.js",
-    "index.html": "/CesarTzaj/todos/index.html",
-    "main.8d8ba537.css.map": "/CesarTzaj/todos/static/css/main.8d8ba537.css.map",
-    "main.8c05fd18.js.map": "/CesarTzaj/todos/static/js/main.8c05fd18.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.8d8ba537.css",
-    "static/js/main.8c05fd18.js"
-  ]
+  "main.css": "/CesarTzaj/todos/static/css/main.2f47d9f3.chunk.css",
+  "main.js": "/CesarTzaj/todos/static/js/main.f2e0229a.chunk.js",
+  "main.js.map": "/CesarTzaj/todos/static/js/main.f2e0229a.chunk.js.map",
+  "static/js/1.513e1c12.chunk.js": "/CesarTzaj/todos/static/js/1.513e1c12.chunk.js",
+  "static/js/1.513e1c12.chunk.js.map": "/CesarTzaj/todos/static/js/1.513e1c12.chunk.js.map",
+  "runtime~main.js": "/CesarTzaj/todos/static/js/runtime~main.8078cab2.js",
+  "runtime~main.js.map": "/CesarTzaj/todos/static/js/runtime~main.8078cab2.js.map",
+  "static/css/main.2f47d9f3.chunk.css.map": "/CesarTzaj/todos/static/css/main.2f47d9f3.chunk.css.map",
+  "index.html": "/CesarTzaj/todos/index.html",
+  "precache-manifest.82fffcc8df975d7c75e73ca11381203e.js": "/CesarTzaj/todos/precache-manifest.82fffcc8df975d7c75e73ca11381203e.js",
+  "service-worker.js": "/CesarTzaj/todos/service-worker.js"
 }
