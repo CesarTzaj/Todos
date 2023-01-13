@@ -6,7 +6,7 @@ import { TodoItem } from "../layout/TodoItems.js";
 import {TodoContext} from "../context/DataProvider.js";
 import { AddTodoButton } from "../layout/Addbutton.js";
 import { AddTodo } from "./AddTodo.js";
-
+import { FilterButtons } from "../layout/FilterTodo.js";
 function TodoList() {
   const {
     error,
@@ -21,6 +21,7 @@ function TodoList() {
       <TodoCounter  />
       <SearchOption
       />
+      <FilterButtons/>
       <Todolist>
         {error && <p className="estado" >Error 404...</p>}
         {loading && <p className="estado">Estamos Cargando....</p>}
