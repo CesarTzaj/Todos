@@ -1,11 +1,20 @@
 import React from "react";
+import { TodoContext } from "../context/DataProvider.js";
 
-function TodoCounter ({completed, totalTodos}){
+function TodoCounter() {
   return (
-    <React.Fragment>
-      <h2>My tasks</h2>
-      <p className="trackingTask">You've completed {completed} out of {totalTodos}</p>
-    </React.Fragment>
+    <TodoContext.Consumer>
+      {({ todoCompleted,
+        totalTodos }) => (
+        <React.Fragment>
+
+          <h2>My tasks</h2>
+          <p className="trackingTask">You've completed {todoCompleted} out of {totalTodos}</p>
+        </React.Fragment>
+      )}
+
+    </TodoContext.Consumer>
+
   )
 }
-export  {TodoCounter}
+export { TodoCounter }

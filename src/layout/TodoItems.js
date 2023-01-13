@@ -1,20 +1,25 @@
 import React from "react";
+import { TodoContext } from "../context/DataProvider";
 function TodoItem(props) {
-  function done (){
-   
-  }
-  
+  const { MarkComplete,
+    Delete,
+    SearchedTodos
+  } = React.useContext(TodoContext)
+
+    function TodoStatus(){
+      MarkComplete(props.text, !props.completed)
+    }
   return (
     <li >
       <span
        className={`material-symbols-outlined  ${props.completed && 'task-completed'} `}
-       onClick={props.Markcomplete}
+       onClick={TodoStatus}
         
       >done</span>
       <p className={`${props.completed && 'task-completed'}`}>{props.text} </p>
       <span 
       className="material-symbols-outlined delete"
-      onClick={props.Delete}
+      onClick={()=> Delete(props.text)}
       >close</span>
     </li>
   );

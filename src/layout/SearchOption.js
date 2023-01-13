@@ -1,16 +1,14 @@
-import React from "react";
-
-function SearchOption({searchValue, SetSearchValue}){
-
+import React, {useContext} from "react";
+import { TodoContext } from "../context/DataProvider";
+function SearchOption(){
+  const { SetSearchValue} = useContext(TodoContext)
   const onSearchButon = (event)=>{
+    console.log(event.target.value);
     SetSearchValue(event.target.value)
   }
   return (
   <section className='searchSection'>
-  <div>
     <input onChange={onSearchButon} placeholder="ToDo's"/>
-    </div>
-  <button>Search</button>
  </section>
  );
 }
