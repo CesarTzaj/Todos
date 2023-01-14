@@ -40,7 +40,6 @@ body {
   min-height: 80vh;
   max-height: 100vh;
   z-index: 1;
-  overflow-y: scroll;
 }
 
 .container{
@@ -55,7 +54,7 @@ body {
   box-shadow: -4px -5px 62px -6px rgba(0,0,0,0.75);
   -webkit-box-shadow: -4px -5px 62px -6px rgba(0,0,0,0.75);
   -moz-box-shadow: -4px -5px 62px -6px rgba(0,0,0,0.75);
-  
+  overflow-y: scroll;
 }
 main section h2 {
   text-align: center;
@@ -238,12 +237,30 @@ main section textarea{
   z-index: 1;
   background-color: white;
 }
-
+.FilterSection{
+  display: grid;
+  max-width: 450px;
+  /* justify-self: center; */
+  grid-template-columns: repeat(2, 50%);
+}
+.FilterSection div{
+  display: flex;
+  justify-content: space-evenly;
+}
+.FilterSection label{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.FilterSection div input{
+  width: 20px;
+  height: 20px;
+}
 @media (max-width: 700px){
   .information{
     display: grid;
     justify-content: center;
     width: 100%;
+    left: 0;
     border: 3px black solid;
   }
   .information.constainer{
@@ -257,5 +274,21 @@ main section textarea{
   .AddTodoButton{
     background-color: black;
   }
- 
+  .FilterSection{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    justify-content: center;
+  }
+  .FilterSection div{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .FilterSection label{
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .FilterSection input{
+    width: 20px;
+    height: 20px;
+  }
 }

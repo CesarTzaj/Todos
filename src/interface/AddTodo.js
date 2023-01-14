@@ -6,14 +6,13 @@ import {TodoContext} from '../context/DataProvider'
 function AddTodo( ){
   const { 
     newTodoValue,
-    openTodo, 
     onWrite
   } = useContext(TodoContext);
 
   return  ReactDOM.createPortal (
     <React.Fragment>
       <div className="background"></div>
-      <section className={`information ${!openTodo&& `open`}`}>
+      <section className={`information`}>
         <h2>New Task</h2>
         <div className="constainer">
           <textarea 

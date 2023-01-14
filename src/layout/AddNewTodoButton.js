@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { TodoContext } from "../context/DataProvider";
 
 function AddNewTodoButtons() {
+
   const { 
     newTodoValue,
     AddTodo, 
@@ -10,7 +11,7 @@ function AddNewTodoButtons() {
 
 
   function SaveTodo() {
-    if (newTodoValue != "") {
+    if (newTodoValue !== "") {
       AddTodo(newTodoValue);
       setAddStatus();
     }

@@ -3,11 +3,11 @@ import { TodoContext } from "../context/DataProvider";
 function TodoItem(props) {
   const { MarkComplete,
     Delete,
-    SearchedTodos
   } = React.useContext(TodoContext)
 
     function TodoStatus(){
-      MarkComplete(props.text, !props.completed)
+      console.log(props.text, props);
+      MarkComplete(props.key2, !props.completed)
     }
   return (
     <li >

@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
 import { TodoContext } from "../context/DataProvider";
+
 function SearchOption(){
-  const { SetSearchValue} = useContext(TodoContext)
+  const { SetSearchValue,GetCompleted} = useContext(TodoContext)
   const onSearchButon = (event)=>{
     console.log(event.target.value);
     SetSearchValue(event.target.value)

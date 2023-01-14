@@ -14,7 +14,6 @@ function TodoList() {
     SearchedTodos,
     openTodo,
   } = React.useContext(TodoContext);
-
   return (
     <React.Fragment>
     <section className="container">
@@ -32,7 +31,7 @@ function TodoList() {
               text={todo.text}
               key={todo.key}
               completed={todo.completed}
-
+              key2={todo.key}
             />
           );
         })}

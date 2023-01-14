@@ -35,9 +35,29 @@ function DataProvider({ children }) {
   }
 
   const MarkComplete = (todoKey, status) => {
-    const todoIndex = todos.findIndex((todo) => todo.text === todoKey);
+    const todoIndex = todos.findIndex((todo) => todo.key === todoKey);
     const newTodos = [...todos];
     todos[todoIndex].completed = status;
+    saveTodos(newTodos);
+  };
+
+  const unComplete = todos.filter((todo) => {
+      
+    return (!todo.completed )
+   });
+
+   const CompletedTodos = todos.filter((todo) => {
+    return (todo.completed )
+   })
+
+  const GetCompleted = () => {
+    const newTodos = [...CompletedTodos, ...unComplete];
+    console.log(newTodos);
+    saveTodos(newTodos);
+  };
+  const GetUncompleted = () => {
+    const newTodos = [...unComplete, ...CompletedTodos];
+    console.log(newTodos);
     saveTodos(newTodos);
   };
 
@@ -51,7 +71,7 @@ function DataProvider({ children }) {
   };
   function AddTodo(text) {
     const newTodos = [...todos];
-    newTodos.push({ text: text, completed: false, key: newTodos.length+1});
+    newTodos.push({ text: text, completed: false, key: `key${newTodos.length+1}`});
     saveTodos(newTodos);
   }
 
@@ -75,7 +95,8 @@ function DataProvider({ children }) {
         SetSearchValue,
         saveTodos,
         onWrite,
-        
+        GetCompleted,
+        GetUncompleted,        
       }}
     >
       {children}
