@@ -34,13 +34,6 @@ function DataProvider({ children }) {
     SetNewTodoValue(event.target.value);
   }
 
-  const MarkComplete = (todoKey, status) => {
-    const todoIndex = todos.findIndex((todo) => todo.key === todoKey);
-    const newTodos = [...todos];
-    todos[todoIndex].completed = status;
-    saveTodos(newTodos);
-  };
-
   const unComplete = todos.filter((todo) => {
       
     return (!todo.completed )
@@ -52,26 +45,37 @@ function DataProvider({ children }) {
 
   const GetCompleted = () => {
     const newTodos = [...CompletedTodos, ...unComplete];
-    console.log(newTodos);
     saveTodos(newTodos);
   };
   const GetUncompleted = () => {
     const newTodos = [...unComplete, ...CompletedTodos];
+    saveTodos(newTodos);
+  };
+
+  const MarkComplete = (todoKey, status) => {
+    const todoIndex = todos.findIndex((todo) => todo.key === todoKey);
+    const newTodos = [...todos];
+    todos[todoIndex].completed = status;
     console.log(newTodos);
     saveTodos(newTodos);
   };
 
   const Delete = (todoKey) => {
-    const todoIndex = todos.findIndex((todo) => {
-      return todo.text === todoKey;
-    });
+    const todoIndex = todos.findIndex((todo) => todo.key === todoKey);
+    console.log(todoKey);
+    console.log(todoIndex);
     const newTodos = [...todos];
-    newTodos.splice(newTodos[todoIndex], 1);
+    console.log(newTodos);
+    newTodos.splice(todoIndex, 1);
+    console.log(newTodos);
     saveTodos(newTodos);
   };
   function AddTodo(text) {
     const newTodos = [...todos];
-    newTodos.push({ text: text, completed: false, key: `key${newTodos.length+1}`});
+    for (let i = 0; i < newTodos.length; i++) {
+      newTodos[i].key = i;
+    }
+    newTodos.push({ text: text, completed: false, key: newTodos.length});
     saveTodos(newTodos);
   }
 

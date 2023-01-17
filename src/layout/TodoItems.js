@@ -19,7 +19,7 @@ function TodoItem(props) {
       <p className={`${props.completed && 'task-completed'}`}>{props.text} </p>
       <span 
       className="material-symbols-outlined delete"
-      onClick={()=> Delete(props.text)}
+      onClick={()=> Delete(props.key2)}
       >close</span>
     </li>
   );
