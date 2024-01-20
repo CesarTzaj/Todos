@@ -20,11 +20,8 @@ function TodoList() {
   
   
   useEffect(() => {
-    console.log(miElementoRef.current.clientHeight);
     if (miElementoRef.current) {
-      const altura = miElementoRef.current.clientHeight;
-      console.log("Altura del elemento: " + altura + " píxeles");
-      setHieght(altura)
+      setHieght( miElementoRef.current.clientHeight)
     }
   }, [SearchedTodos.length]); 
   return (
