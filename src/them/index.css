@@ -157,6 +157,7 @@ li p.false{
 }
 
 .information.container{
+  
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -264,10 +265,19 @@ main section textarea{
   }
 }
 @media (max-width: 430px){
+  #tasks{
+    margin-top: 2;
+    min-height: 70vh;
+    max-height: 80vh;
+  }
+
   .container{
+    margin-top: 0;
+    min-height: 60vh;
     max-height: 70vh;
   }
   .information{
+    display: none;
     display: grid;
     position: absolute;
     left: calc(15% - 7.5%);
@@ -319,6 +329,10 @@ main section textarea{
   }
   .AddTodoButton{
     margin-top: 0;
+  }
+  #Button{
+    margin-top: 2rem;
+
   }
 }
 
