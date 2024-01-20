@@ -55,19 +55,14 @@ function DataProvider({ children }) {
   const MarkComplete = (todoKey, status) => {
     const todoIndex = todos.findIndex((todo) => todo.key === todoKey);
     const newTodos = [...todos];
-    todos[todoIndex].completed = status;
-    console.log(newTodos);
+    todos[todoIndex].completed = status;    
     saveTodos(newTodos);
   };
 
   const Delete = (todoKey) => {
     const todoIndex = todos.findIndex((todo) => todo.key === todoKey);
-    console.log(todoKey);
-    console.log(todoIndex);
     const newTodos = [...todos];
-    console.log(newTodos);
     newTodos.splice(todoIndex, 1);
-    console.log(newTodos);
     saveTodos(newTodos);
   };
   function AddTodo(text) {

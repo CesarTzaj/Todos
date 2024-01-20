@@ -6,9 +6,10 @@ function TodoItem(props) {
   } = React.useContext(TodoContext)
 
     function TodoStatus(){
-      console.log(props.text, props);
       MarkComplete(props.key2, !props.completed)
     }
+
+    
   return (
     <li >
       <span

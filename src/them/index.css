@@ -37,6 +37,7 @@ body {
   grid-template-columns:  80%;
   justify-content: center;
   align-items: center;
+  margin-top: 4rem;
   min-height: 80vh;
   max-height: 100vh;
   z-index: 1;
@@ -64,6 +65,8 @@ main section h2 {
   background: rgb(2, 0, 36);
   background: linear-gradient(167deg, rgba(2, 0, 36, 1) 9%, rgba(121, 9, 107, 1) 40%, rgba(0, 212, 255, 1) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
   color: tomato;
 }
@@ -291,4 +294,63 @@ main section textarea{
     width: 20px;
     height: 20px;
   }
+  main section h2{
+    font-size: 4rem;
+  }
+  main .searchSection {
+    height: 30px;
+    width: 100%;
+  }
+  main .searchSection input{
+    font-size: 15px;
+  }
+  .trackingTask {
+    font-size: 1.2rem;
+  }
+}
+
+/* scroll */
+
+.scrolls {
+  margin: 2rem auto;
+  border: 1px solid #aaa;
+  height: 300px;
+  width:90%;
+  max-width: 400px;
+  background: #f1f2f3;
+  overflow:auto;
+  box-sizing: border-box;
+  padding:0 1rem;
+}
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+.hide-scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.scroll::-webkit-scrollbar {
+  
+}
+.scroll::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+.scroll::-webkit-scrollbar-button:increment,.scroll::-webkit-scrollbar-button {
+  display: none;
+} 
+
+.scroll::-webkit-scrollbar:horizontal {
+  height: 15px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #4b79ce;
+  border-radius: 20px;
+  border: 2px solid #268cf1;
+}
+
+.scroll::-webkit-scrollbar-track {
+  border-radius: 10px; 
+  margin-bottom: 3rem;
+  margin-top: 2rem;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { TodoCounter } from "../layout/TodoCounter.js";
 import { SearchOption } from "../layout/SearchOption.js";
 import { Todolist } from "../layout/Todolist.js";
@@ -14,14 +14,30 @@ function TodoList() {
     SearchedTodos,
     openTodo,
   } = React.useContext(TodoContext);
+
+  const [hieght, setHieght] = useState(null);
+  const miElementoRef = useRef(null);
+  
+  
+  useEffect(() => {
+    console.log(miElementoRef.current.clientHeight);
+    if (miElementoRef.current) {
+      const altura = miElementoRef.current.clientHeight;
+      console.log("Altura del elemento: " + altura + " píxeles");
+      setHieght(altura)
+    }
+  }, [SearchedTodos.length]); 
   return (
     <React.Fragment>
-    <section className="container">
+    <section className={`container scroll ${hieght <= 572 && 'hide-scroll' }`}  ref={miElementoRef}>
       <TodoCounter  />
       <SearchOption
       />
       <FilterButtons/>
-      <Todolist>
+      <Todolist 
+        setHieght={setHieght}
+        hieght={hieght}
+      >
         {error && <p className="estado" >Error 404...</p>}
         {loading && <p className="estado">Estamos Cargando....</p>}
         {(!loading && !SearchedTodos.length) && <p className="estado">¡creat el primer todo!</p>}
