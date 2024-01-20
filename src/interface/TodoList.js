@@ -36,8 +36,8 @@ function TodoList() {
         hieght={hieght}
       >
         {error && <p className="estado" >Error 404...</p>}
-        {loading && <p className="estado">Estamos Cargando....</p>}
-        {(!loading && !SearchedTodos.length) && <p className="estado">¡creat el primer todo!</p>}
+        {loading && <p className="estado">loading....</p>}
+        {(!loading && !SearchedTodos.length) && <p className="estado">Create your first ToDo!</p>}
         {SearchedTodos.map((todo) => {
           return (
             <TodoItem
