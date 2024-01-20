@@ -264,9 +264,11 @@ main section textarea{
   }
   .information{
     display: grid;
+    position: absolute;
+    left: calc(15% - 7.5%);
     justify-content: center;
-    width: 100%;
-    left: 0;
+    width: 85%;
+    
     border: 3px black solid;
   }
   .information.constainer{
